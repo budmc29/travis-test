@@ -1,6 +1,7 @@
-#!/usr/env/bin bash
+#!/usr/bin/env bats
 
-echo 'works'
-touch test1.txt
-touch test2.txt
-rm test1.txt
+@test "it works", {
+    run bash example.sh "test"
+    [ "$status" -eq 0 ]
+    [ "$output" = "test" ]
+}
